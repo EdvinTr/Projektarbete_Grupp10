@@ -2,9 +2,35 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
+    <link href="/css/style.css" type="text/css" rel="stylesheet">
     <title>Administration System</title>
 </head>
 <body>
-
+    <h3>USERS</h3>
+    <table id="userTable" class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Type</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr th:each="products : ${listProducts}">
+            <td th:text="${products.id}">Product ID</td>
+            <td th:text="${products.name}">Name</td>
+            <td th:text="${products.type}">Type</td>
+            <td th:text="${products.quantity}">Quantity</td>
+            <td th:text="${products.price}">Price</td>
+            <td>
+                <a th:href="@{'/edit/' + ${products.id}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/' + ${products.id}}">Delete</a>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
