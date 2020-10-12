@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Product {
+public class Products {
 
     private Integer id;
     private String name;
@@ -15,7 +15,7 @@ public class Product {
     private Integer quantity;
     private Double price;
 
-    public Product() {
+    public Products() {
 
     }
 
