@@ -1,7 +1,9 @@
 package com.zanatech.zanatech.Controllers;
 
-public class ProductController {
-    //HEllo world
+import org.springframework.stereotype.Controller;
 
-    //Vem vare som kasta!
+@Controller
+public class ProductController {
+
+
 }
