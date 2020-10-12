@@ -5,10 +5,29 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">-->
     <link href="/css/style.css" type="text/css" rel="stylesheet">
+    <link href="/css/nav.css" type="text/css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d82fdbf1c7.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <title>Administration System</title>
 </head>
+<header class="nav-container">
+    <nav>
+        <div class="nav-content">
+            <h1 class="nav-content__logo">
+                Zana<span class="nav-content__logo-color">Tech</span>
+            </h1>
+            <div class="nav-content__list">
+                <!--Här kan ni lägga in fler länkar-->
+                <div class="pointer">
+                    <!--Ändra href så man loggar ut-->
+                    <a href="#!" class="nav-content__list-link">Logout</a>
+                    <i class="fas fa-sort-down pointer__icon"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 <body>
     <h3>USERS</h3>
     <table id="userTable" class="table table-striped">

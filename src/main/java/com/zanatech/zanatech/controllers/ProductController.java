@@ -15,7 +15,7 @@ public class ProductController {
     private ProductService service;
     private Object Product;
 
-    @RequestMapping("/ZanaTech")
+    @RequestMapping("/zanatech")
     public String viewHomePage(Model model) {
         List<Products> listProducts = service.listAll();
         model.addAttribute("listProducts", listProducts);
