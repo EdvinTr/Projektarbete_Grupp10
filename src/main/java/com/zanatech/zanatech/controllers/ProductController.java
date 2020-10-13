@@ -31,12 +31,12 @@ public class ProductController {
     @PostMapping("/save")
     public String saveProduct(@ModelAttribute("products") Products products){
         service.save(products);
-        return "redirect:/zanatech";
+        return "redirect:/";
     }
 
     @RequestMapping("/delete/{id}")
     public String deleteProduct(@PathVariable(name = "id") Integer id){
         service.delete(id);
-        return "redirect:/zanatech";
+        return "redirect:/";
     }
 }
