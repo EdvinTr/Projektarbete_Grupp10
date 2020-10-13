@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/style.css" type="text/css" rel="stylesheet">
     <link href="/css/nav.css" type="text/css" rel="stylesheet">
+    <link href="/css/table.css" type="text/css" rel="stylesheet">
+    <link href="/css/mediaquerys.css" type="text/css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d82fdbf1c7.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <title>Administration System</title>
@@ -29,14 +31,21 @@
     </nav>
 </header>
 <body>
-    <h3>USERS</h3>
-    <table id="userTable" class="table table-striped">
+
+<!-- Wrapper för Grid -->
+<div class="wrapper">
+
+    <h1>RANDOM TEXT XD</h1>
+
+<div class="table-section">
+    <table id="productTable" cellpadding="10">
         <tr>
             <th>ID</th>
             <th>Product</th>
             <th>Type</th>
             <th>Quantity</th>
             <th>Price</th>
+            <th>Actions</th>
         </tr>
         <tr th:each="products : ${listProducts}">
             <td th:text="${products.id}">Product ID</td>
@@ -45,11 +54,17 @@
             <td th:text="${products.quantity}">Quantity</td>
             <td th:text="${products.price}">Price</td>
             <td>
-                <a th:href="@{'/edit/' + ${products.id}}">Edit</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <a th:href="@{'/delete/' + ${products.id}}">Delete</a>
+                <a class="button primarybtn edit" th:href="@{'/edit/' + ${products.id}}">Edit</a>
+                <!-- Knapp för mobil -->
+                <a class="button smallbtn edit" th:href="@{'/edit/' + ${products.id}}"><i class="fas fa-pen"></i></a>
+                <a class="button primarybtn delete" th:href="@{'/delete/' + ${products.id}}">Delete</a>
+                <!-- Knapp för mobil -->
+                <a class="button smallbtn delete" th:href="@{'/delete/' + ${products.id}}"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
     </table>
+</div>
+
+</div>
 </body>
 </html>

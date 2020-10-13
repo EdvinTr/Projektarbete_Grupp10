@@ -5,6 +5,10 @@
     --text-dark: black;
     --text-light: white;
     --hover-main: #666;
+    --table-bg-odd: #FFF;
+    --table-bg-even: #FFF;
+    --table-button-delete: #c0392b;
+    --table-button-edit: #3498db;
 }
 * {
     margin: 0;
@@ -15,4 +19,33 @@
 body {
     max-width: 1000px;
     margin: 0 auto;
+}
+
+/* COMPONENTS */
+.button {
+    font-family:'Open Sans';
+    font-size: 16px;
+    font-weight:400;
+    display:inline-block;
+    color:#FFF;
+    border-radius: .25em;
+    text-decoration: none;
+}
+.primarybtn {
+    line-height:40px;
+    transition:ease-in-out .2s;
+    padding: 0 16px;
+}
+.smallbtn {
+    display: none;
+    transition:ease-in-out .2s;
+    line-height:40px;
+    min-width: 40px;
+    text-align: center;
+}
+.delete {
+    background: var(--table-button-delete);
+}
+.edit {
+    background: var(--table-button-edit);
 }
