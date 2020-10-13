@@ -48,9 +48,6 @@
 #productTable td:nth-child(2) {
     text-transform: uppercase;
 }
-#productTable td:nth-child(5) {
-    font-weight: bold;
-}
 #productTable td:nth-child(6) {
     background: var(--main-color);
     text-align: center;
