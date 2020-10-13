@@ -21,6 +21,14 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
+footer {
+    background: var(--main-color);
+    color: #868c96;
+}
+footer p {
+    padding: 40px 0;
+    text-align: center;
+}
 
 /* COMPONENTS */
 .button {
