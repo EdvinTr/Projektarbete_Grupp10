@@ -1,0 +1,57 @@
+#productTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--table-bg-odd);
+}
+#productTable th {
+    padding: 12px 6px;
+    background: var(--main-color);
+    font-weight: 400;
+    /*Linje för table head (syns knappt men gör mycket! :D */
+    border-bottom: solid thin #C1C1C1;
+    border-right: solid thin #C1C1C1;
+    border-top: solid thin #D6D6D6;
+    border-left: solid thin #D6D6D6;
+}
+#productTable td {
+    padding: 4px 6px;
+    font-weight: 400;
+    /* Ramen för table cells hårdkodade färger.*/
+    border-bottom: solid thin #C1C1C1;
+    border-right: solid thin #C1C1C1;
+    border-top: solid thin #D6D6D6;
+    border-left: solid thin #D6D6D6;
+}
+#productTable tr:nth-child(odd) {
+    background: var(--table-bg-odd);
+}
+#productTable tr:nth-child(even) {
+    background: var(--table-bg-even);
+}
+#productTable td:nth-child(1) {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    /*border-left: solid 1px #FFFFFF;*/
+}
+#productTable th:nth-child(2),
+#productTable th:nth-child(3),
+#productTable th:nth-child(4),
+#productTable th:nth-child(5) {
+    text-align: left;
+}
+#productTable th:nth-child(1) {
+    text-align: center;
+    /*border-left: solid 1px #FFFFFF;*/
+}
+#productTable td:nth-child(2) {
+    text-transform: uppercase;
+}
+#productTable td:nth-child(6) {
+    background: var(--main-color);
+    text-align: center;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+}

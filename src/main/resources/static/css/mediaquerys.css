@@ -1,0 +1,19 @@
+/* Telefon vyn */
+@media only screen and (max-width: 690px) {
+    .wrapper {
+        /*Template areas ska in här sen för grid */
+    }
+
+    #productTable th:nth-child(5){
+        display: none;
+    }
+    #productTable td:nth-child(5) {
+        display: none;
+    }
+    .primarybtn{
+        display: none;
+    }
+    .smallbtn{
+        display: initial;
+    }
+}

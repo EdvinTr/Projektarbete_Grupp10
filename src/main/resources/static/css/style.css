@@ -1,0 +1,70 @@
+:root {
+    font-size: 16px;
+    --main-color: #F3F3F3;
+    --secondary-color: #3498db ;
+    --text-dark: black;
+    --text-light: white;
+    --hover-main: #666;
+    --table-bg-odd: #FFF;
+    --table-bg-even: #FFF;
+    --table-button-delete: #0068ac;
+    --table-button-edit: #3498db ;
+    --table-button-add: #3498db ;
+    --table-button-search: #3498db;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+footer {
+    background: var(--main-color);
+    color: #868c96;
+}
+footer p {
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* COMPONENTS */
+.button {
+    font-size: 16px;
+    font-weight:400;
+    display:inline-block;
+    color:#FFF;
+    border-radius: .25em;
+    text-decoration: none;
+}
+.primarybtn {
+    line-height:40px;
+    padding: 0 16px;
+}
+.smallbtn {
+    display: none;
+    line-height:40px;
+    width: 40px;
+    text-align: center;
+}
+.search {
+    background: var(--table-button-search);
+    line-height:40px;
+    width: 40px;
+    text-align: center;
+}
+.delete {
+    background: var(--table-button-delete);
+}
+.edit {
+    background: var(--table-button-edit);
+}
+.add {
+    background: var(--table-button-add);
+}
+.no-border {
+    border: none;
+}

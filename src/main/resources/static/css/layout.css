@@ -1,0 +1,50 @@
+wrapper{
+    /*max-width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    grid-template-areas: ;*/
+}
+
+/* Input styling */
+.input-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /*Test för att se hur bred vi vill ha den */
+    line-height: 14px;
+    margin: 1rem;
+}
+label {
+    color: var(--hover-main);
+    font-size: 11px;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    top: 14px;
+    padding: 0 2px;
+    pointer-events: none;
+    background: #fff;
+    transition: transform 100ms ease;
+    transform: translateY(-20px);
+}
+input {
+    font-size: 13px;
+    color: var(--hover-main);
+    outline: none;
+    border: 1px solid var(--secondary-color);
+    padding: 10px 20px;
+    position: relative;
+}
+input:invalid + label {
+    transform: translateY(0);
+}
+input:focus {
+    border-color: var(--secondary-color);
+}
+input:focus + label {
+    color: var(--text-dark);
+    transform: translateY(-20px);
+}
+/* Search Sectionen */
