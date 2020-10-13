@@ -11,6 +11,7 @@
     --table-button-edit: #3498db ;
     --table-button-add: #3498db ;
     --table-button-search: #3498db;
+    --table-button-cancel: #555555;
 }
 * {
     margin: 0;
@@ -65,14 +66,17 @@ footer p {
 .add {
     background: var(--table-button-add);
 }
+.cancel {
+    background: var(--table-button-cancel);
+}
 .no-border {
     border: none;
 }
 /*popup*/
 .edit_popup{
+    z-index: 150;
     display:none;
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
     height:100vh;
@@ -83,9 +87,10 @@ footer p {
 .popup{
     height:auto;
     width:80%;
-    max-width:600px;
+    max-width:37.5rem;
     margin:5% auto;
     display:block;
+    background: #fff;
     border-radius:8px;
     overflow:hidden;
 }

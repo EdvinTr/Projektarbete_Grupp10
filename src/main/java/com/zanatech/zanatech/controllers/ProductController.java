@@ -41,10 +41,4 @@ public class ProductController {
         service.delete(id);
         return "redirect:/";
     }
-
-    @RequestMapping("/edit/{id}")
-    public String showEditProductForm(@PathVariable(name = "id") Integer id){
-        Products products = service.get(id);
-        return "redirect:/";
-    }
 }
