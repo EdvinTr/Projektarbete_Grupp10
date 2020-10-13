@@ -1,4 +1,4 @@
-package com.zanatech.zanatech.repositorys;
+package com.zanatech.zanatech.repositories;
 
 import com.zanatech.zanatech.models.Products;
 import org.springframework.data.jpa.repository.JpaRepository;
