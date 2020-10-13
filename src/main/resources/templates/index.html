@@ -24,7 +24,9 @@
                 <!--Här kan ni lägga in fler länkar-->
                 <div class="pointer">
                     <!--Ändra href så man loggar ut-->
-                    <a th:href="@{/logout}" class="nav-content__list-link">Logout<button type="submit" style="border-style: none"></button></a>
+                    <a th:href="@{/logout}" class="nav-content__list-link">Logout
+                        <button type="submit" style="border-style: none"></button>
+                    </a>
                     <i class="fas fa-sort-down pointer__icon"></i>
                 </div>
             </div>
@@ -63,9 +65,11 @@
 
     <div class="search-section">
         <div class="input-wrapper">
-            <input type="text" id="prodSearch">
-            <label for="prodSearch">Product Search</label>
-            <button type="submit" class="button search"><i class="fa fa-search"></i></button>
+            <form th:action="@{/}">
+                <input type="text" id="prodSearch" name="keyword">
+                <label for="prodSearch">Product Search</label>
+                <button type="submit" class="button search"><i class="fa fa-search"></i></button>
+            </form>
         </div>
     </div>
 

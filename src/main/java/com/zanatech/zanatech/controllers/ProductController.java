@@ -3,6 +3,7 @@ package com.zanatech.zanatech.controllers;
 import com.zanatech.zanatech.models.Products;
 import com.zanatech.zanatech.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -20,8 +21,8 @@ public class ProductController {
 
 
     @RequestMapping("/")
-    public String viewHomePage(Model model) {
-        List<Products> listProducts = service.listAll();
+    public String viewHomePage(Model model, @Param("keyword") String keyword) {
+        List<Products> listProducts = service.listAll(keyword);
         Products products = new Products();
         model.addAttribute("products", products);
         model.addAttribute("listProducts", listProducts);
