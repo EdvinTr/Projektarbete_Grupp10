@@ -7,15 +7,15 @@ wrapper{
     grid-template-areas: ;*/
 }
 
-/* ADD PRODUCT sektionen! :D */
-.addProduct-section .input-wrapper {
+/* Input styling */
+.input-wrapper {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 2fr; /*Test för att se hur bred vi vill ha den */
     line-height: 14px;
     margin: 1rem;
 }
-.addProduct-section label {
+label {
     color: var(--hover-main);
     font-size: 11px;
     text-transform: uppercase;
@@ -29,7 +29,7 @@ wrapper{
     transition: transform 100ms ease;
     transform: translateY(-20px);
 }
-.addProduct-section input {
+input {
     font-size: 13px;
     color: var(--hover-main);
     outline: none;
@@ -37,13 +37,14 @@ wrapper{
     padding: 10px 20px;
     position: relative;
 }
-.addProduct-section input:invalid + label {
+input:invalid + label {
     transform: translateY(0);
 }
-.addProduct-section input:focus {
+input:focus {
     border-color: var(--secondary-color);
 }
-.addProduct-section input:focus + label {
+input:focus + label {
     color: var(--text-dark);
     transform: translateY(-20px);
 }
+/* Search Sectionen */

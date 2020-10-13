@@ -10,6 +10,7 @@
     --table-button-delete: #0068ac;
     --table-button-edit: #3498db ;
     --table-button-add: #3498db ;
+    --table-button-search: #3498db;
 }
 * {
     margin: 0;
@@ -41,14 +42,18 @@ footer p {
 }
 .primarybtn {
     line-height:40px;
-    transition:ease-in-out .2s;
     padding: 0 16px;
 }
 .smallbtn {
     display: none;
-    transition:ease-in-out .2s;
     line-height:40px;
-    min-width: 40px;
+    width: 40px;
+    text-align: center;
+}
+.search {
+    background: var(--table-button-search);
+    line-height:40px;
+    width: 40px;
     text-align: center;
 }
 .delete {
