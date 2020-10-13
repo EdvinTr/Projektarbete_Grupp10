@@ -35,6 +35,12 @@
     text-align: center;
     /*border-left: solid 1px #FFFFFF;*/
 }
+#productTable th:nth-child(2),
+#productTable th:nth-child(3),
+#productTable th:nth-child(4),
+#productTable th:nth-child(5) {
+    text-align: left;
+}
 #productTable th:nth-child(1) {
     text-align: center;
     /*border-left: solid 1px #FFFFFF;*/
@@ -43,8 +49,6 @@
     text-transform: uppercase;
 }
 #productTable td:nth-child(5) {
-    text-align: center;
-    color: var(--secondary-color);
     font-weight: bold;
 }
 #productTable td:nth-child(6) {

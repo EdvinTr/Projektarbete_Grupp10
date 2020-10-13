@@ -1,14 +1,15 @@
 :root {
     font-size: 16px;
     --main-color: #F3F3F3;
-    --secondary-color: #00b7ff;
+    --secondary-color: #3498db ;
     --text-dark: black;
     --text-light: white;
     --hover-main: #666;
     --table-bg-odd: #FFF;
     --table-bg-even: #FFF;
-    --table-button-delete: #c0392b;
-    --table-button-edit: #3498db;
+    --table-button-delete: #0068ac;
+    --table-button-edit: #3498db ;
+    --table-button-add: #3498db ;
 }
 * {
     margin: 0;
@@ -23,7 +24,6 @@ body {
 
 /* COMPONENTS */
 .button {
-    font-family:'Open Sans';
     font-size: 16px;
     font-weight:400;
     display:inline-block;
@@ -48,4 +48,10 @@ body {
 }
 .edit {
     background: var(--table-button-edit);
+}
+.add {
+    background: var(--table-button-add);
+}
+.no-border {
+    border: none;
 }

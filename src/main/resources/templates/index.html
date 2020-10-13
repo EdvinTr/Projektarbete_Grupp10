@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/css/style.css" type="text/css" rel="stylesheet">
     <link href="/css/nav.css" type="text/css" rel="stylesheet">
+    <link href="/css/layout.css" type="text/css" rel="stylesheet">
     <link href="/css/table.css" type="text/css" rel="stylesheet">
     <link href="/css/mediaquerys.css" type="text/css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d82fdbf1c7.js" crossorigin="anonymous"></script>
@@ -35,7 +36,29 @@
 <!-- Wrapper för Grid -->
 <div class="wrapper">
 
-    <h1>RANDOM TEXT XD</h1>
+<div class="addProduct-section">
+    <form action="#" th:action="@{/save}" th:object="${products}" method="post">
+        <div class="input-wrapper">
+            <input type="text" th:field=*{name} id="prodName" required>
+            <label for="prodName">Product Name</label>
+        </div>
+        <div class="input-wrapper">
+            <input type="text" th:field=*{type} id="prodType" required>
+            <label for="prodType">Product Type</label>
+        </div>
+        <div class="input-wrapper">
+            <input type="text" th:field=*{quantity} id="prodQuantity" required>
+            <label for="prodQuantity">Product Quantity</label>
+        </div>
+        <div class="input-wrapper">
+            <input type="text" th:field=*{price} id="prodPrice" required>
+            <label for="prodPrice">Product Price</label>
+        </div>
+        <div class="input-wrapper">
+            <button class="button primarybtn add" type="submit">Add Product</button>
+        </div>
+    </form>
+</div>
 
 <div class="table-section">
     <table id="productTable" cellpadding="10">
