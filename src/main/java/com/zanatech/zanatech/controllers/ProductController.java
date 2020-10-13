@@ -5,8 +5,10 @@ import com.zanatech.zanatech.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
@@ -14,9 +16,10 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService service;
-    private Object Product;
 
-    @RequestMapping("/zanatech")
+
+
+    @RequestMapping("/")
     public String viewHomePage(Model model) {
         List<Products> listProducts = service.listAll();
         Products products = new Products();
@@ -28,12 +31,12 @@ public class ProductController {
     @PostMapping("/save")
     public String saveProduct(@ModelAttribute("products") Products products){
         service.save(products);
-        return "redirect:/zanatech";
+        return "redirect:/";
     }
 
     @RequestMapping("/delete/{id}")
     public String deleteProduct(@PathVariable(name = "id") Integer id){
         service.delete(id);
-        return "redirect:/zanatech";
+        return "redirect:/";
     }
 }
