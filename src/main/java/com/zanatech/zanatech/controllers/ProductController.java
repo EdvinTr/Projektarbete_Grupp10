@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -38,6 +39,12 @@ public class ProductController {
     @RequestMapping("/delete/{id}")
     public String deleteProduct(@PathVariable(name = "id") Integer id){
         service.delete(id);
+        return "redirect:/";
+    }
+
+    @RequestMapping("/edit/{id}")
+    public String showEditProductForm(@PathVariable(name = "id") Integer id){
+        Products products = service.get(id);
         return "redirect:/";
     }
 }

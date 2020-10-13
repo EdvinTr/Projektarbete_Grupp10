@@ -68,3 +68,35 @@ footer p {
 .no-border {
     border: none;
 }
+/*popup*/
+.edit_popup{
+    display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height:100vh;
+    width:100vw;
+    overflow:auto;
+    background-color: rgba(0,0,0,0.6);
+}
+.popup{
+    height:auto;
+    width:80%;
+    max-width:600px;
+    margin:5% auto;
+    display:block;
+    border-radius:8px;
+    overflow:hidden;
+}
+.title{
+    width:100%;
+    display:block;
+    background:var(--main-color);
+    color:var(--secondary-color);
+    font-weight:700;
+    padding:5px;
+}
+.title p{
+    margin:5px;
+}
