@@ -1,7 +1,7 @@
 package com.zanatech.zanatech.services;
 
 import com.zanatech.zanatech.models.Products;
-import com.zanatech.zanatech.repositorys.ProductRepository;
+import com.zanatech.zanatech.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,10 @@ public class ProductService {
     @Autowired
     private ProductRepository repo;
 
-    public List<Products> listAll(){
+    public List<Products> listAll(String keyword){
+        if(keyword != null) {
+            return repo.findAll(keyword);
+        }
         return repo.findAll();
     }
 

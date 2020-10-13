@@ -12,6 +12,7 @@
     <link href="/css/mediaquerys.css" type="text/css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d82fdbf1c7.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../static/js/main.js" th:src="@{/js/main.js}"></script>
     <title>Administration System</title>
 </head>
 <header class="nav-container">
@@ -24,7 +25,9 @@
                 <!--Här kan ni lägga in fler länkar-->
                 <div class="pointer">
                     <!--Ändra href så man loggar ut-->
-                    <a href="#!" class="nav-content__list-link">Logout</a>
+                    <a th:href="@{/logout}" class="nav-content__list-link">Logout
+                        <button type="submit" style="border-style: none"></button>
+                    </a>
                     <i class="fas fa-sort-down pointer__icon"></i>
                 </div>
             </div>
@@ -36,72 +39,106 @@
 <!-- Wrapper för Grid -->
 <div class="wrapper">
 
-<div class="addProduct-section">
-    <form action="#" th:action="@{/save}" th:object="${products}" method="post">
-        <div class="input-wrapper">
-            <input type="text" th:field=*{name} id="prodName" required>
-            <label for="prodName">Product Name</label>
-        </div>
-        <div class="input-wrapper">
-            <input type="text" th:field=*{type} id="prodType" required>
-            <label for="prodType">Product Type</label>
-        </div>
-        <div class="input-wrapper">
-            <input type="text" th:field=*{quantity} id="prodQuantity" required>
-            <label for="prodQuantity">Product Quantity</label>
-        </div>
-        <div class="input-wrapper">
-            <input type="text" th:field=*{price} id="prodPrice" required>
-            <label for="prodPrice">Product Price</label>
-        </div>
-        <div class="input-wrapper">
-            <button class="button primarybtn add" type="submit">Add Product</button>
-            <button class="button smallbtn add" type="submit"><i class="fas fa-plus"></i></button>
-        </div>
-    </form>
-</div>
+    <div class="addProduct-section">
+        <form action="#" th:action="@{/save}" th:object="${products}" method="post">
+            <div class="input-wrapper">
+                <input type="text" th:field="*{name}" id="prodName" required>
+                <label for="prodName">Product Name</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" th:field="*{type}" id="prodType" required>
+                <label for="prodType">Product Type</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" th:field="*{quantity}" id="prodQuantity" required>
+                <label for="prodQuantity">Product Quantity</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" th:field="*{price}" id="prodPrice" required>
+                <label for="prodPrice">Product Price</label>
+            </div>
+            <div class="input-wrapper">
+                <button class="button primarybtn add" type="submit">Add Product</button>
+                <button class="button smallbtn add" type="submit"><i class="fas fa-plus"></i></button>
+            </div>
+        </form>
+    </div>
 
-<div class="search-section">
-    <div class="input-wrapper">
-        <input type="text" id="prodSearch">
-        <label for="prodSearch">Product Search</label>
-        <button type="submit" class="button search"><i class="fa fa-search"></i></button>
+    <div class="search-section">
+        <div class="input-wrapper">
+            <form th:action="@{/}">
+                <input type="text" id="prodSearch" name="keyword">
+                <label for="prodSearch">Product Search</label>
+                <button type="submit" class="button search"><i class="fa fa-search"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="amount-section">
+        <!-- Under construction -->
+    </div>
+</div>
+<!--Grid end-->
+<table id="productTable" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>Product</th>
+        <th>Type</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+    <tr th:each="products : ${listProducts}">
+        <td th:text="${products.id}">Product ID</td>
+        <td th:text="${products.name}">Name</td>
+        <td th:text="${products.type}">Type</td>
+        <td th:text="${products.quantity}">Quantity</td>
+        <td th:text="${products.price}">Price</td>
+        <td>
+            <a onClick="openPopup('#zanaPop1')" class="button primarybtn edit" th:href="@{'/edit/' + ${products.id}}">Edit</a>
+            <!-- Knapp för mobil -->
+            <a onClick="openPopup('#zanaPop1')" class="button smallbtn edit" th:href="@{'/edit/' + ${products.id}}"><i class="fas fa-pen"></i></a>
+            <a class="button primarybtn delete" th:href="@{'/delete/' + ${products.id}}">Delete</a>
+            <!-- Knapp för mobil -->
+            <a class="button smallbtn delete" th:href="@{'/delete/' + ${products.id}}"><i class="fas fa-trash"></i></a>
+        </td>
+    </tr>
+</table>
+
+<div id="zanaPop1" class="edit_popup">
+    <div class="popup">
+        <div class="title">
+            <p>Edit Product</p>
+        </div>
+        <form action="#" th:action="@{/save}" th:object="${products}" method="post">
+            <div class="input-wrapper">
+                <input type="text" th:field="*{id}" id="prodId" required readonly>
+                <label for="prodId">Product ID</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" th:field="*{name}" id="prodName" required>
+                <label for="prodName">Product Name</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" th:field="*{type}" id="prodType" required>
+                <label for="prodType">Product Type</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" th:field="*{quantity}" id="prodQuantity" required>
+                <label for="prodQuantity">Product Quantity</label>
+            </div>
+            <div class="input-wrapper">
+                <input type="text" th:field="*{price}" id="prodPrice" required>
+                <label for="prodPrice">Product Price</label>
+            </div>
+            <div class="input-wrapper">
+                <button onclick="closePopup('#zanaPop1')" class="button primarybtn add" type="submit">Edit Product</button>
+                <button onclick="closePopup('#zanaPop1')" class="button smallbtn add" type="submit"><i class="fas fa-pen"></i></button>
+            </div>
+        </form>
     </div>
 </div>
 
-<div class="amount-section">
-    <!-- Under construction -->
-</div>
-
-<div class="table-section">
-    <table id="productTable" cellpadding="10">
-        <tr>
-            <th>ID</th>
-            <th>Product</th>
-            <th>Type</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Actions</th>
-        </tr>
-        <tr th:each="products : ${listProducts}">
-            <td th:text="${products.id}">Product ID</td>
-            <td th:text="${products.name}">Name</td>
-            <td th:text="${products.type}">Type</td>
-            <td th:text="${products.quantity}">Quantity</td>
-            <td th:text="${products.price}">Price</td>
-            <td>
-                <a class="button primarybtn edit" th:href="@{'/edit/' + ${products.id}}">Edit</a>
-                <!-- Knapp för mobil -->
-                <a class="button smallbtn edit" th:href="@{'/edit/' + ${products.id}}"><i class="fas fa-pen"></i></a>
-                <a class="button primarybtn delete" th:href="@{'/delete/' + ${products.id}}">Delete</a>
-                <!-- Knapp för mobil -->
-                <a class="button smallbtn delete" th:href="@{'/delete/' + ${products.id}}"><i class="fas fa-trash"></i></a>
-            </td>
-        </tr>
-    </table>
-</div>
-
-</div>
 <footer>
     <p>ZanaTech &copy; 2020 - GIK2F7</p>
 </footer>
