@@ -63,9 +63,10 @@ button {
     text-align: center;
 }
 .reset{
-    background: var(--table-button-search);
+    background: var(--table-button-delete);
+    margin-top: 10px;
     line-height: 40px;
-    width: 100px;
+    width: 82%;
     text-align: center;
 }
 .delete {
