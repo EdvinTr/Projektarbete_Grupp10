@@ -24,6 +24,7 @@
             </h1>
             <div class="nav-content__list">
                 <!--Här kan ni lägga in fler länkar-->
+                <a href="#" class="nav-content__list-link border-right">To Top</a>
                 <div class="pointer">
                     <a th:href="@{/logout}" class="nav-content__list-link">Logout
                         <button type="submit" style="border-style: none"></button>
@@ -66,7 +67,7 @@
         <figure class="fig-wrapper">
             <figcaption>
                 <div class="fig-title">Administration Tool</div>
-                <div class="fig-text">Zana<span>Tech</span> Product Management</div>
+                <div class="fig-text"><b>Zana<span>Tech</span></b> Product Management</div>
             </figcaption>
             <div class="fig-container">
                 <div class="fig-color"></div>
@@ -76,14 +77,15 @@
     </div>
 
     <div class="search-section">
-        <div class="input-wrapper">
+        <div class="input-wrapper search-wrapper">
             <form th:action="@{/}">
                 <input type="text" id="prodSearch" name="keyword">
                 <label for="prodSearch">Product Search</label>
                 <button type="submit" class="button search"><i class="fa fa-search"></i></button>
             </form>
             <form th:action="@{/}">
-                <button type="submit" class="button reset">Reset</button>
+                <button type="submit" class="button primarybtn reset">Reset</button>
+                <button type="submit" class="button smallbtn reset"><i class="fas fa-undo"></i></button>
             </form>
         </div>
     </div>

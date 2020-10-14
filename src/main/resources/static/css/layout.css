@@ -12,7 +12,7 @@
     grid-area: add;
     justify-content: center;
 }
-.main-section {;
+.main-section {
     grid-area: main;
     align-self: flex-end;
     justify-self: flex-end;
@@ -29,6 +29,13 @@
     display: grid;
     line-height: 14px;
     margin: 1rem;
+}
+.search-wrapper {
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 5px;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-right: 6px;
 }
 label {
     color: var(--hover-main);

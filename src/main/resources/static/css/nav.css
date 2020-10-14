@@ -39,6 +39,7 @@ nav {
     color: var(--secondary-color);
 }
 .nav-content__list {
+    display: flex;
     grid-auto-flow: column;
     place-items: center;
 }
