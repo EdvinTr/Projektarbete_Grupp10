@@ -62,6 +62,12 @@ button {
     width: 40px;
     text-align: center;
 }
+.reset{
+    background: var(--table-button-search);
+    line-height: 40px;
+    width: 100px;
+    text-align: center;
+}
 .delete {
     background: var(--table-button-delete);
 }
