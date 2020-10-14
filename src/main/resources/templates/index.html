@@ -90,6 +90,11 @@
         </div>
     </div>
 </div>
+<!-- Order by button-->
+<!-- Robin stoppa denna th:action="@{/order} i Price rutan om det går -->
+<form th:action="@{/orderByPrice}">
+    <input type="submit" value="Order By Price">
+</form>
 <!--Grid end-->
 <table id="productTable" cellpadding="10">
     <tr>
@@ -119,6 +124,7 @@
         <td><a th:href="@{'/edit/' + ${products.id}}">Edit</a>
     </tr>
 </table>
+
 
 <div id="zanaPop1" class="edit_popup">
     <div class="popup">

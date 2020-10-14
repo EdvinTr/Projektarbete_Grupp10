@@ -18,6 +18,7 @@ import java.util.List;
 public class ProductController {
     @Autowired
     private ProductService service;
+    private int orderByCounter = 0;
 
 
 
@@ -48,5 +49,20 @@ public class ProductController {
         Products product = service.get(id);
         mav.addObject("product", product);
         return mav;
+    }
+    @RequestMapping("/orderByPrice")
+    public String orderByPrice(Model model) {
+        List<Products> listProducts;
+        if(orderByCounter == 0) {
+            listProducts = service.sortPriceByASC();
+            orderByCounter = 1;
+        } else {
+            listProducts = service.sortPriceByDESC();
+            orderByCounter = 0;
+        }
+        Products products = new Products();
+        model.addAttribute("products", products);
+        model.addAttribute("listProducts", listProducts);
+        return "index";
     }
 }
