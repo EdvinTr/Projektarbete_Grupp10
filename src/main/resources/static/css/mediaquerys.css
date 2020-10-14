@@ -22,9 +22,13 @@
         margin: 0 auto;
         max-width: 500px;
     }
-    .main-section {;
+    .main-section {
         align-self: center;
         justify-self: center;
+    }
+    .search-section {
+        max-width: 500px;
+        margin: 0 auto;
     }
     .fig-color {
         height: 55px;
@@ -54,7 +58,6 @@
     .wrapper {
         /*Template areas ska in här sen för grid */
     }
-
     #productTable th:nth-child(3){
         display: none;
     }

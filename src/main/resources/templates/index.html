@@ -24,6 +24,7 @@
             </h1>
             <div class="nav-content__list">
                 <!--Här kan ni lägga in fler länkar-->
+                <a href="#" class="nav-content__list-link border-right">To Top</a>
                 <div class="pointer">
                     <a th:href="@{/logout}" class="nav-content__list-link">Logout
                         <button type="submit" style="border-style: none"></button>
@@ -66,36 +67,39 @@
         <figure class="fig-wrapper">
             <figcaption>
                 <div class="fig-title">Administration Tool</div>
-                <div class="fig-text">Zana<span>Tech</span> Product Management</div>
+                <div class="fig-text"><b>Zana<span>Tech</span></b> Product Management</div>
             </figcaption>
             <div class="fig-container">
                 <div class="fig-color"></div>
-                <img class="fig-icon" src="https://cdn.onlinewebfonts.com/svg/img_545710.png"  alt="cogpen"/>
+                <img class="fig-icon" src="https://cdn.onlinewebfonts.com/svg/img_545710.png" alt="cogpen"/>
             </div>
         </figure>
     </div>
 
     <div class="search-section">
-        <div class="input-wrapper">
+        <div class="input-wrapper search-wrapper">
             <form th:action="@{/}">
                 <input type="text" id="prodSearch" name="keyword">
                 <label for="prodSearch">Product Search</label>
                 <button type="submit" class="button search"><i class="fa fa-search"></i></button>
             </form>
             <form th:action="@{/}">
-                <button type="submit" class="button reset">Reset</button>
+                <button type="submit" class="button primarybtn reset">Reset</button>
+                <button type="submit" class="button smallbtn reset"><i class="fas fa-undo"></i></button>
             </form>
         </div>
     </div>
 </div>
+
 <!--Grid end-->
 <table id="productTable" cellpadding="10">
     <tr>
-        <th>ID</th>
-        <th>Product</th>
-        <th>Type</th>
-        <th>Quantity</th>
-        <th>Price</th>
+<!--        <th>ID</th>-->
+        <th><form th:action="@{/orderById}"><button type="submit" value="id" name="id">ID</button></form></th>
+        <th><form th:action="@{/orderByName}"><button type="submit" value="name" name="name">Product</button></form></th>
+        <th><form th:action="@{/orderByType}"><button type="submit" value="type" name="type">Type</button></form></th>
+        <th><form th:action="@{/orderByQuantity}"><button type="submit" value="quantity" name="quantity">Quantity</button></form></th>
+        <th><form th:action="@{/orderByPrice}"><button type="submit" value="price" name="price">Price</button></form></th>
         <th>Actions</th>
     </tr>
     <tr th:each="products : ${listProducts}">
@@ -105,15 +109,20 @@
         <td th:text="${products.quantity}">Quantity</td>
         <td th:text="${products.price}">Price</td>
         <td>
+            <!--Change th:action to th:href to redirect to /edit-->
             <a onClick="openPopup('#zanaPop1')" class="button primarybtn edit" th:action="@{'/edit/' + ${products.id}}">Edit</a>
             <!-- Knapp för mobil -->
-            <a onClick="openPopup('#zanaPop1')" class="button smallbtn edit" th:action="@{'/edit/' + ${products.id}}"><i class="fas fa-pen"></i></a>
+            <a onClick="openPopup('#zanaPop1')" class="button smallbtn edit" th:action="@{'/edit/' + ${products.id}}"><i
+                    class="fas fa-pen"></i></a>
             <a class="button primarybtn delete" th:href="@{'/delete/' + ${products.id}}">Delete</a>
             <!-- Knapp för mobil -->
             <a class="button smallbtn delete" th:href="@{'/delete/' + ${products.id}}"><i class="fas fa-trash"></i></a>
         </td>
+        <!--Can remove this line -->
+        <td><a th:href="@{'/edit/' + ${products.id}}">Edit</a>
     </tr>
 </table>
+
 
 <div id="zanaPop1" class="edit_popup">
     <div class="popup">
@@ -142,8 +151,12 @@
                 <label for="editPrice">Product Price</label>
             </div>
             <div class="input-wrapper">
-                <button id="show" onclick="closePopup('#zanaPop1')" class="button primarybtn add" type="submit">Edit Product</button>
-                <button id="show" onclick="closePopup('#zanaPop1')" type="button" class="button primarybtn cancel">Cancel</button>
+                <button id="show" onclick="closePopup('#zanaPop1')" class="button primarybtn add" type="submit">Edit
+                    Product
+                </button>
+                <button id="show" onclick="closePopup('#zanaPop1')" type="button" class="button primarybtn cancel">
+                    Cancel
+                </button>
             </div>
         </form>
     </div>

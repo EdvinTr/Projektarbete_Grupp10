@@ -12,4 +12,5 @@ public interface ProductRepository extends JpaRepository<Products, Integer> {
             + " OR p.type LIKE %?1%")
     public List<Products> findAll(String keyword);
 
+
 }
