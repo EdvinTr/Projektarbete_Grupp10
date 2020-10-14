@@ -25,7 +25,6 @@
             <div class="nav-content__list">
                 <!--Här kan ni lägga in fler länkar-->
                 <div class="pointer">
-                    <!--Ändra href så man loggar ut-->
                     <a th:href="@{/logout}" class="nav-content__list-link">Logout
                         <button type="submit" style="border-style: none"></button>
                     </a>
@@ -39,9 +38,8 @@
 
 <!-- Wrapper för Grid -->
 <div class="wrapper">
-
-    <div class="addProduct-section">
-        <form action="#" th:action="@{/save}" th:object="${products}" method="post">
+    <div class="add-section">
+        <form class="add-form" action="#" th:action="@{/save}" th:object="${products}" method="post">
             <div class="input-wrapper">
                 <input type="text" th:field="*{name}" id="prodName" required>
                 <label for="prodName">Product Name</label>
@@ -59,10 +57,22 @@
                 <label for="prodPrice">Product Price</label>
             </div>
             <div class="input-wrapper">
-                <button class="button primarybtn add" type="submit">Add Product</button>
-                <button class="button smallbtn add" type="submit"><i class="fas fa-plus"></i></button>
+                <button id="show" class="button primarybtn add" type="submit">Add Product</button>
             </div>
         </form>
+    </div>
+
+    <div class="main-section">
+        <figure class="fig-wrapper">
+            <figcaption>
+                <div class="fig-title">Administration Tool</div>
+                <div class="fig-text">Zana<span>Tech</span> Product Management</div>
+            </figcaption>
+            <div class="fig-container">
+                <div class="fig-color"></div>
+                <img class="fig-icon" src="https://cdn.onlinewebfonts.com/svg/img_545710.png"  alt="cogpen"/>
+            </div>
+        </figure>
     </div>
 
     <div class="search-section">
@@ -73,10 +83,6 @@
                 <button type="submit" class="button search"><i class="fa fa-search"></i></button>
             </form>
         </div>
-    </div>
-
-    <div class="amount-section">
-        <!-- Under construction -->
     </div>
 </div>
 <!--Grid end-->
@@ -133,10 +139,8 @@
                 <label for="prodPrice">Product Price</label>
             </div>
             <div class="input-wrapper">
-                <button onclick="closePopup('#zanaPop1')" class="button primarybtn add" type="submit">Edit Product</button>
-                <button onclick="closePopup('#zanaPop1')" class="button smallbtn add" type="submit"><i class="fas fa-pen"></i></button>
-                <button onclick="closePopup('#zanaPop1')" type="button" class="button primarybtn cancel">Cancel</button>
-                <button onclick="closePopup('#zanaPop1')" type="button" class="button smallbtn cancel"><i class="fas fa-ban"></i></button>
+                <button id="show" onclick="closePopup('#zanaPop1')" class="button primarybtn add" type="submit">Edit Product</button>
+                <button id="show" onclick="closePopup('#zanaPop1')" type="button" class="button primarybtn cancel">Cancel</button>
             </div>
         </form>
     </div>

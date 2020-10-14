@@ -1,17 +1,32 @@
-wrapper{
-    /*max-width: 100%;
+.wrapper{
+    max-width: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
-    grid-template-areas: ;*/
+    grid-template-areas:
+    "add main main"
+    "add search search";
+}
+.add-section {
+    grid-area: add;
+    justify-content: center;
+}
+.main-section {;
+    grid-area: main;
+    align-self: flex-end;
+    justify-self: flex-end;
+}
+.search-section {
+    grid-area: search;
+    align-self: flex-end;
+    justify-self: flex-end;
 }
 
 /* Input styling */
 .input-wrapper {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 2fr; /*Test för att se hur bred vi vill ha den */
     line-height: 14px;
     margin: 1rem;
 }

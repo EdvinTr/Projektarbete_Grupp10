@@ -1,9 +1,42 @@
 /* Telefon vyn */
-@media only screen and (max-width: 690px) {
+@media only screen and (max-width: 900px) {
     .wrapper {
-        /*Template areas ska in här sen för grid */
+        grid-template-columns: 40% 1fr 1fr;
     }
-
+    .fig-title {
+        font-size: 1.3rem;
+    }
+    .fig-text {
+        font-size: .8rem;
+    }
+}
+@media only screen and (max-width: 706px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+        "main"
+        "add"
+        "search";
+    }
+    .add-form {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    .main-section {;
+        align-self: center;
+        justify-self: center;
+    }
+    .fig-color {
+        height: 55px;
+        width: 55px;
+    }
+    .fig-icon {
+        height: 55px;
+        width: 55px;
+    }
+    figcaption {
+        text-align: center;
+    }
     #productTable th:nth-child(5){
         display: none;
     }

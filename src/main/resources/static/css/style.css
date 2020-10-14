@@ -31,7 +31,12 @@ footer p {
     padding: 40px 0;
     text-align: center;
 }
-
+span {
+    color: var(--secondary-color);
+}
+button {
+    border: none;
+}
 /* COMPONENTS */
 .button {
     font-size: 16px;
@@ -72,6 +77,9 @@ footer p {
 .no-border {
     border: none;
 }
+#show{
+    display: initial;
+}
 /*popup*/
 .edit_popup{
     z-index: 150;
@@ -87,7 +95,7 @@ footer p {
 .popup{
     height:auto;
     width:80%;
-    max-width:37.5rem;
+    max-width:18rem;
     margin:5% auto;
     display:block;
     background: #fff;
@@ -104,4 +112,56 @@ footer p {
 }
 .title p{
     margin:5px;
+}
+/* Card */
+.fig-wrapper {
+    margin: 0;
+    padding: .8rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+figcaption {
+    padding: 0 1rem;
+    text-align: right;
+}
+.fig-container {
+    position: relative;
+    display: flex;
+}
+.fig-title {
+    color: var(--text-dark);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+}
+.fig-text{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: .2rem;
+}
+.fig-color {
+    height: 80px;
+    width: 80px;
+    background: var(--secondary-color);
+    border-radius: 100px;
+    transition: background .3s ease-in-out;
+    animation: fadeInFadeOut 2s infinite;
+    position: relative;
+}
+.fig-icon {
+    height: 80px;
+    width: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeInFadeOut 4s infinite;
+}
+@keyframes fadeInFadeOut {
+    0%   { opacity:1; }
+    50%  { opacity:0; }
+    100% { opacity:1; }
 }
