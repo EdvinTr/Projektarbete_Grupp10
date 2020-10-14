@@ -90,28 +90,16 @@
         </div>
     </div>
 </div>
-<!-- Order by button-->
-<!-- Robin stoppa denna th:action="@{/order} i Price rutan om det går -->
-<form th:action="@{/orderByPrice}">
-    <input type="submit" value="price" name="price">
-</form>
-<form th:action="@{/orderByType}">
-    <input type="submit" value="type" name="type">
-</form>
-<form th:action="@{/orderByQuantity}">
-    <input type="submit" value="quantity" name="quantity">
-</form>
-<form th:action="@{/orderByName}">
-    <input type="submit" value="name" name="name">
-</form>
+
 <!--Grid end-->
 <table id="productTable" cellpadding="10">
     <tr>
-        <th>ID</th>
-        <th>Product</th>
-        <th>Type</th>
-        <th>Quantity</th>
-        <th>Price</th>
+<!--        <th>ID</th>-->
+        <th><form th:action="@{/orderById}"><button type="submit" value="id" name="id">ID</button></form></th>
+        <th><form th:action="@{/orderByName}"><button type="submit" value="name" name="name">Product</button></form></th>
+        <th><form th:action="@{/orderByType}"><button type="submit" value="type" name="type">Type</button></form></th>
+        <th><form th:action="@{/orderByQuantity}"><button type="submit" value="quantity" name="quantity">Quantity</button></form></th>
+        <th><form th:action="@{/orderByPrice}"><button type="submit" value="price" name="price">Price</button></form></th>
         <th>Actions</th>
     </tr>
     <tr th:each="products : ${listProducts}">

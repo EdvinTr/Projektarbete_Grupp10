@@ -46,6 +46,10 @@ public class ProductController {
         mav.addObject("product", product);
         return mav;
     }
+    @RequestMapping("/orderById")
+    public String orderById(Model model, @RequestParam(value = "id") String columnName) {
+        return orderBy(model, columnName);
+    }
 
     @RequestMapping("/orderByPrice")
     public String orderByPrice(Model model, @RequestParam(value = "price") String columnName) {
