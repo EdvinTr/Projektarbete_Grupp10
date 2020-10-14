@@ -41,4 +41,12 @@ public class ProductController {
         service.delete(id);
         return "redirect:/";
     }
+
+    @RequestMapping("/edit/{id}")
+    public ModelAndView showEditProductForm(@PathVariable(name = "id") Integer id) {
+        ModelAndView mav = new ModelAndView("edit_product");
+        Products product = service.get(id);
+        mav.addObject("product", product);
+        return mav;
+    }
 }

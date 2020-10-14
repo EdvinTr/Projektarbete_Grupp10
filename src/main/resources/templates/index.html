@@ -71,7 +71,7 @@
             </figcaption>
             <div class="fig-container">
                 <div class="fig-color"></div>
-                <img class="fig-icon" src="https://cdn.onlinewebfonts.com/svg/img_545710.png"  alt="cogpen"/>
+                <img class="fig-icon" src="https://cdn.onlinewebfonts.com/svg/img_545710.png" alt="cogpen"/>
             </div>
         </figure>
     </div>
@@ -107,6 +107,7 @@
         <td th:text="${products.quantity}">Quantity</td>
         <td th:text="${products.price}">Price</td>
         <td>
+            <!--Change th:action to th:href to redirect to /edit-->
             <a onClick="openPopup('#zanaPop1')" class="button primarybtn edit" th:action="@{'/edit/' + ${products.id}}">Edit</a>
             <!-- Knapp för mobil -->
             <a onClick="openPopup('#zanaPop1')" class="button smallbtn edit" th:action="@{'/edit/' + ${products.id}}"><i class="fas fa-pen"></i></a>
@@ -114,6 +115,8 @@
             <!-- Knapp för mobil -->
             <a class="button smallbtn delete" th:href="@{'/delete/' + ${products.id}}"><i class="fas fa-trash"></i></a>
         </td>
+        <!--Can remove this line -->
+        <td><a th:href="@{'/edit/' + ${products.id}}">Edit</a>
     </tr>
 </table>
 
