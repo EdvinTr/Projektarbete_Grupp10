@@ -93,7 +93,16 @@
 <!-- Order by button-->
 <!-- Robin stoppa denna th:action="@{/order} i Price rutan om det går -->
 <form th:action="@{/orderByPrice}">
-    <input type="submit" value="Order By Price">
+    <input type="submit" value="price" name="price">
+</form>
+<form th:action="@{/orderByType}">
+    <input type="submit" value="type" name="type">
+</form>
+<form th:action="@{/orderByQuantity}">
+    <input type="submit" value="quantity" name="quantity">
+</form>
+<form th:action="@{/orderByName}">
+    <input type="submit" value="name" name="name">
 </form>
 <!--Grid end-->
 <table id="productTable" cellpadding="10">
@@ -115,7 +124,8 @@
             <!--Change th:action to th:href to redirect to /edit-->
             <a onClick="openPopup('#zanaPop1')" class="button primarybtn edit" th:action="@{'/edit/' + ${products.id}}">Edit</a>
             <!-- Knapp för mobil -->
-            <a onClick="openPopup('#zanaPop1')" class="button smallbtn edit" th:action="@{'/edit/' + ${products.id}}"><i class="fas fa-pen"></i></a>
+            <a onClick="openPopup('#zanaPop1')" class="button smallbtn edit" th:action="@{'/edit/' + ${products.id}}"><i
+                    class="fas fa-pen"></i></a>
             <a class="button primarybtn delete" th:href="@{'/delete/' + ${products.id}}">Delete</a>
             <!-- Knapp för mobil -->
             <a class="button smallbtn delete" th:href="@{'/delete/' + ${products.id}}"><i class="fas fa-trash"></i></a>
@@ -153,8 +163,12 @@
                 <label for="editPrice">Product Price</label>
             </div>
             <div class="input-wrapper">
-                <button id="show" onclick="closePopup('#zanaPop1')" class="button primarybtn add" type="submit">Edit Product</button>
-                <button id="show" onclick="closePopup('#zanaPop1')" type="button" class="button primarybtn cancel">Cancel</button>
+                <button id="show" onclick="closePopup('#zanaPop1')" class="button primarybtn add" type="submit">Edit
+                    Product
+                </button>
+                <button id="show" onclick="closePopup('#zanaPop1')" type="button" class="button primarybtn cancel">
+                    Cancel
+                </button>
             </div>
         </form>
     </div>

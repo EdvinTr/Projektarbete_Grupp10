@@ -13,29 +13,30 @@ public class ProductService {
     @Autowired
     private ProductRepository repo;
 
-    public List<Products> listAll(String keyword){
-        if(keyword != null) {
+    public List<Products> listAll(String keyword) {
+        if (keyword != null) {
             return repo.findAll(keyword);
         }
         return repo.findAll();
     }
 
-    public void save(Products products){
+    public void save(Products products) {
         repo.save(products);
     }
 
-    public Products get(Integer id){
+    public Products get(Integer id) {
         return repo.findById(id).get();
     }
 
-    public void delete(Integer id){
+    public void delete(Integer id) {
         repo.deleteById(id);
     }
 
-    public List<Products> sortPriceByASC() {
-        return repo.findAll(Sort.by(Sort.Direction.ASC,"price"));
+    public List<Products> sortByAsc(String columnName) {
+        return repo.findAll(Sort.by(Sort.Direction.ASC, columnName));
     }
-    public List<Products> sortPriceByDESC() {
-        return repo.findAll(Sort.by(Sort.Direction.DESC,"price"));
+
+    public List<Products> sortByDesc(String columnName) {
+        return repo.findAll(Sort.by(Sort.Direction.DESC, columnName));
     }
 }
