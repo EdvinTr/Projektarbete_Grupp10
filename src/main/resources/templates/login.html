@@ -24,7 +24,10 @@
 <body>
     <div class="loginform">
         <div class="logintitle">
+
+            <div class="fig" th:insert="~{index :: #animation-fig}"></div>
             <p>Zana<span class="titlecolor">Tech</span> Login</p>
+
         </div>
         <form th:action="@{/login}" method="post">
             <div class="input-wrapper">
@@ -40,5 +43,7 @@
             </div>
         </form>
     </div>
+
 </body>
+
 </html>

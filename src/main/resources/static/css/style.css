@@ -166,6 +166,22 @@ figcaption {
     padding: 0 1rem;
     text-align: right;
 }
+.fig, .fig>.fig-container{
+    margin: 0 auto;
+}
+.fig>.fig-container>.fig-color, .fig>.fig-container>.fig-icon{
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;
+}
+.fig>.fig-container{
+    justify-content: center;
+    align-content: center;
+}
+.fig>.fig-container>.fig-icon{
+    left: auto;
+
+}
 .fig-container {
     position: relative;
     display: flex;
