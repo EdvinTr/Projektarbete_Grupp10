@@ -154,6 +154,10 @@ a:hover {
 .titlecolor {
     color: var(--secondary-color);
 }
+.alertBox {
+    width: 90%;
+    margin: 0 auto;
+}
 /* Card */
 .fig-wrapper {
     margin: 0;
