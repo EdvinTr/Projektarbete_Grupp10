@@ -38,6 +38,12 @@
                 <input type="password" name="password" id="password">
                 <label for="password">Password</label>
             </div>
+
+            <div th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null and session[SPRING_SECURITY_LAST_EXCEPTION].message != null}"
+                 th:text="${session[SPRING_SECURITY_LAST_EXCEPTION].message}"
+                        class="alert alert-primary alertBox" role="alert">
+                Invalid Credentials
+            </div>
             <div class="input-wrapper">
                 <button class="button primarybtn add" type="submit" name="submit">Login</button>
             </div>
