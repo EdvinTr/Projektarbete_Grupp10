@@ -3,6 +3,7 @@ package com.zanatech.zanatech.models;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id

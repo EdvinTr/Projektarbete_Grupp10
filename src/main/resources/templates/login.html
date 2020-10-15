@@ -22,23 +22,23 @@
     <title>Title</title>
 </head>
 <body>
-    <div class="loginform">
-        <div class="logintitle">
-            <p>Zana<span class="titlecolor">Tech</span> Login</p>
-        </div>
-        <form th:action="@{/login}" method="post">
-            <div class="input-wrapper">
-                <input type="text" name="username" id="username">
-                <label for="username">Username</label>
-            </div>
-            <div class="input-wrapper">
-                <input type="password" name="password" id="password">
-                <label for="password">Password</label>
-            </div>
-            <div class="input-wrapper">
-                <button class="button primarybtn add" type="submit" name="submit">Login</button>
-            </div>
-        </form>
+<div class="loginform">
+    <div class="logintitle">
+        <p>Zana<span class="titlecolor">Tech</span> Login</p>
     </div>
+    <form th:action="@{/login}" method="post">
+        <div class="input-wrapper">
+            <input type="text" name="username" id="username">
+            <label for="username">Username</label>
+        </div>
+        <div class="input-wrapper">
+            <input type="password" name="password" id="password">
+            <label for="password">Password</label>
+        </div>
+        <div class="input-wrapper">
+            <button class="button primarybtn add" type="submit" name="submit">Login</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
