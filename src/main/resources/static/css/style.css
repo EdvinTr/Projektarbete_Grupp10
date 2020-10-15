@@ -154,6 +154,14 @@ a:hover {
 .titlecolor {
     color: var(--secondary-color);
 }
+.alertBox {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .7rem;
+}
 /* Card */
 .fig-wrapper {
     margin: 0;
