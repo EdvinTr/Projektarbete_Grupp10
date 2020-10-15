@@ -87,4 +87,13 @@ public class ProductController {
         model.addAttribute("listProducts", listProducts);
         return "index";
     }
+
+    @RequestMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
+    @RequestMapping("/logout-success")
+    public String logoutPage() {
+        return "login";
+    }
 }
