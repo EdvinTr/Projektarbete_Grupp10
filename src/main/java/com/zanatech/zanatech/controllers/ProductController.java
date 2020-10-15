@@ -28,7 +28,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String editProduct(@ModelAttribute("products") Products products, @RequestParam Map<String, String>params) {
+    public String editProduct(@ModelAttribute("products") Products products, @RequestParam Map<String, String> params) {
         products.setName(params.get("editName"));
         products.setPrice(Double.valueOf(params.get("editPrice")));
         products.setType(params.get("editType"));
@@ -36,8 +36,9 @@ public class ProductController {
         service.save(products);
         return "redirect:/";
     }
+
     @RequestMapping("/save")
-    public String saveProd(@ModelAttribute("products")Products product) {
+    public String saveProd(@ModelAttribute("products") Products product) {
         service.save(product);
         return "redirect:/";
     }
@@ -86,5 +87,15 @@ public class ProductController {
         model.addAttribute("products", products);
         model.addAttribute("listProducts", listProducts);
         return "index";
+    }
+
+    @RequestMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
+
+    @RequestMapping("/logout-success")
+    public String logoutPage() {
+        return "login";
     }
 }

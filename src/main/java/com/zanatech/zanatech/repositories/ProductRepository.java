@@ -10,7 +10,7 @@ public interface ProductRepository extends JpaRepository<Products, Integer> {
 
     @Query("SELECT p FROM Products p WHERE p.name LIKE %?1%"
             + " OR p.type LIKE %?1%")
-    public List<Products> findAll(String keyword);
+    List<Products> findAll(String keyword);
 
 
 }
