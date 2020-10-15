@@ -17,10 +17,10 @@ public class ProductController {
     private ProductService service;
     private int orderByCounter = 0;
 
-
     @RequestMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
         List<Products> listProducts = service.listAll(keyword);
+        /* HÄR ÄR ETT FEL*/
         Products products = new Products();
         model.addAttribute("products", products);
         model.addAttribute("listProducts", listProducts);
@@ -39,13 +39,6 @@ public class ProductController {
         return "redirect:/";
     }
 
-    @RequestMapping("/edit/{id}")
-    public ModelAndView showEditProductForm(@PathVariable(name = "id") Integer id) {
-        ModelAndView mav = new ModelAndView("edit_product");
-        Products product = service.get(id);
-        mav.addObject("product", product);
-        return mav;
-    }
     @RequestMapping("/orderById")
     public String orderById(Model model, @RequestParam(value = "id") String columnName) {
         return orderBy(model, columnName);
