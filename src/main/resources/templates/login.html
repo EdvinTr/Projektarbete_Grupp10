@@ -28,16 +28,15 @@
             <div class="fig" th:insert="~{index :: #animation-fig}"></div>
             <p>Zana<span class="titlecolor">Tech</span> Login</p>
 
+        <div class="input-wrapper">
+            <input type="text" name="username" id="username">
+            <label for="username">Username</label>
+    <form th:action="@{/login}" method="post">
         </div>
-        <form th:action="@{/login}" method="post">
-            <div class="input-wrapper">
-                <input type="text" name="username" id="username">
-                <label for="username">Username</label>
-            </div>
-            <div class="input-wrapper">
-                <input type="password" name="password" id="password">
-                <label for="password">Password</label>
-            </div>
+        <div class="input-wrapper">
+            <input type="password" name="password" id="password">
+            <label for="password">Password</label>
+        </div>
 
             <div th:if="${session[SPRING_SECURITY_LAST_EXCEPTION] != null and session[SPRING_SECURITY_LAST_EXCEPTION].message != null}"
                  th:text="${session[SPRING_SECURITY_LAST_EXCEPTION].message}"
