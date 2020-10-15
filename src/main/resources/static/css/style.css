@@ -5,6 +5,7 @@
     --text-dark: black;
     --text-light: white;
     --hover-main: #666;
+    --hover-secondary: #e3e3e3;
     --table-bg-odd: #FFF;
     --table-bg-even: #FFF;
     --table-button-delete: #0068ac;
@@ -37,8 +38,16 @@ footer p {
 span {
     color: var(--secondary-color);
 }
+button:active,
+button:focus,
 button {
     border: none;
+    cursor: pointer;
+    outline: none;
+}
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
 }
 /* COMPONENTS */
 .button {
@@ -94,15 +103,8 @@ button {
     display: initial;
 }
 /*popup*/
-.edit_popup{
-    z-index: 150;
-    display:none;
+.modal{
     position: fixed;
-    left: 0;
-    top: 0;
-    height:100vh;
-    width:100vw;
-    overflow:auto;
     background-color: rgba(0,0,0,0.6);
 }
 .popup{

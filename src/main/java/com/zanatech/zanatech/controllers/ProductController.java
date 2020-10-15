@@ -7,9 +7,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ProductController {
@@ -17,19 +17,28 @@ public class ProductController {
     private ProductService service;
     private int orderByCounter = 0;
 
-
     @RequestMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
         List<Products> listProducts = service.listAll(keyword);
+        /* HÄR ÄR ETT FEL*/
         Products products = new Products();
         model.addAttribute("products", products);
         model.addAttribute("listProducts", listProducts);
         return "index";
     }
 
-    @PostMapping("/save")
-    public String saveProduct(@ModelAttribute("products") Products products) {
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public String editProduct(@ModelAttribute("products") Products products, @RequestParam Map<String, String>params) {
+        products.setName(params.get("editName"));
+        products.setPrice(Double.valueOf(params.get("editPrice")));
+        products.setType(params.get("editType"));
+        products.setQuantity(Integer.valueOf(params.get("editQuantity")));
         service.save(products);
+        return "redirect:/";
+    }
+    @RequestMapping("/save")
+    public String saveProd(@ModelAttribute("products")Products product) {
+        service.save(product);
         return "redirect:/";
     }
 
@@ -39,13 +48,6 @@ public class ProductController {
         return "redirect:/";
     }
 
-    @RequestMapping("/edit/{id}")
-    public ModelAndView showEditProductForm(@PathVariable(name = "id") Integer id) {
-        ModelAndView mav = new ModelAndView("edit_product");
-        Products product = service.get(id);
-        mav.addObject("product", product);
-        return mav;
-    }
     @RequestMapping("/orderById")
     public String orderById(Model model, @RequestParam(value = "id") String columnName) {
         return orderBy(model, columnName);
