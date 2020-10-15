@@ -7,9 +7,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class ProductController {
@@ -27,9 +27,18 @@ public class ProductController {
         return "index";
     }
 
-    @PostMapping("/save")
-    public String saveProduct(@ModelAttribute("products") Products products) {
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public String editProduct(@ModelAttribute("products") Products products, @RequestParam Map<String, String>params) {
+        products.setName(params.get("editName"));
+        products.setPrice(Double.valueOf(params.get("editPrice")));
+        products.setType(params.get("editType"));
+        products.setQuantity(Integer.valueOf(params.get("editQuantity")));
         service.save(products);
+        return "redirect:/";
+    }
+    @RequestMapping("/save")
+    public String saveProd(@ModelAttribute("products")Products product) {
+        service.save(product);
         return "redirect:/";
     }
 
