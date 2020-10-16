@@ -1,28 +1,33 @@
 .nav-container {
     position: sticky;
+    color: var(--text-main);
     width: 100%;
     top: 0;
     z-index: 100;
     background-color: var(--main-color);
-    transition: top 0.4s;
+    transition: top .4s;
 }
+
 .pointer {
     position: relative;
 }
+
 .pointer__icon {
     position: absolute;
     left: 0;
     right: 0;
     top: -.6em;
     text-align: center;
-    font-size: 2rem;
     color: var(--secondary-color);
+    font-size: 2rem;
     z-index: 200;
 }
+
 nav {
     display: grid;
     grid-template-rows: minmax(min-content) min-content;
 }
+
 .nav-content {
     display: grid;
     grid-auto-flow: column;
@@ -30,27 +35,33 @@ nav {
     align-content: center;
     justify-content: space-between;
 }
+
 .nav-content__logo {
     font-size: 1.6rem;
-    margin-left: 1em;
+    justify-self: center;
+    margin: 0 1em;
     text-transform: uppercase;
     font-weight: 500;
 }
+
 .nav-content__logo-color {
     color: var(--secondary-color);
 }
+
 .nav-content__list {
     display: flex;
     grid-auto-flow: column;
     place-items: center;
 }
+
 .nav-content__list-link {
     display: block;
     padding: 1em;
     text-decoration: none;
-    color: var(--text-dark);
+    color: var(--text-main);
 }
+
 .nav-content__list-link:hover {
-    color: var(--text-light);
+    color: var(--text-secondary);
     background-color: var(--hover-main);
 }

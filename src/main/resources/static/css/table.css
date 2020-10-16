@@ -1,67 +1,74 @@
 #productTable {
     width: 100%;
     border-collapse: collapse;
-    background: var(--table-bg-odd);
+    background: var(--table-background);
+    color: var(--text-main);
 }
+
 #productTable th {
     height: 50px;
     background: var(--main-color);
     font-weight: 400;
-    /*Linje för table head (syns knappt men gör mycket! :D */
-    border-bottom: solid thin #C1C1C1;
-    border-right: solid thin #C1C1C1;
-    border-top: solid thin #D6D6D6;
-    border-left: solid thin #D6D6D6;
+    border-bottom: solid thin var(--table-bori-border);
+    border-right: solid thin var(--table-bori-border);
+    border-top: solid thin var(--table-tole-border);
+    border-left: solid thin var(--table-tole-border);
 }
-.th-fill{
+
+.th-fill {
+    color: var(--text-main);
+    background: var(--main-color);
     width: 100%;
     text-align: left;
     height: 100%;
     padding: 6px;
 }
+
 .th-wh {
     width: 100%;
     height: 100%;
 }
+
 .th-c {
     text-align: center;
 }
-.th-fill:hover{
+
+.th-fill:hover {
     background: var(--hover-secondary);
 }
+
 #productTable td {
     padding: 4px 6px;
     font-weight: 400;
-    /* Ramen för table cells hårdkodade färger.*/
-    border-bottom: solid thin #C1C1C1;
-    border-right: solid thin #C1C1C1;
-    border-top: solid thin #D6D6D6;
-    border-left: solid thin #D6D6D6;
+    border-bottom: solid thin var(--table-bori-border);
+    border-right: solid thin var(--table-bori-border);
+    border-top: solid thin var(--table-tole-border);
+    border-left: solid thin var(--table-tole-border);
 }
-#productTable tr:nth-child(odd) {
-    background: var(--table-bg-odd);
-}
-#productTable tr:nth-child(even) {
-    background: var(--table-bg-even);
-}
+
 #productTable td:nth-child(1) {
     color: var(--secondary-color);
+    background: var(--main-color);
     font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
 }
+
 #productTable th:nth-child(2),
 #productTable th:nth-child(3),
 #productTable th:nth-child(4),
 #productTable th:nth-child(5) {
     text-align: left;
 }
+
 #productTable th:nth-child(1) {
     text-align: center;
 }
+
 #productTable td:nth-child(2) {
     text-transform: uppercase;
 }
+
 #productTable td:nth-child(6) {
     background: var(--main-color);
     text-align: center;

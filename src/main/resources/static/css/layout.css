@@ -1,72 +1,94 @@
-.wrapper{
+.wrapper {
     max-width: 100%;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
-    grid-template-areas:
-    "add main main"
-    "add search search";
+    grid-template-areas: "add main main" "add search search";
 }
+
 .add-section {
     grid-area: add;
     justify-content: center;
 }
+
 .main-section {
     grid-area: main;
     align-self: flex-end;
     justify-self: flex-end;
 }
+
 .search-section {
     grid-area: search;
     align-self: flex-end;
     justify-self: flex-end;
 }
 
-/* Input styling */
-.input-wrapper {
-    position: relative;
-    display: grid;
-    line-height: 14px;
-    margin: 1rem;
+@media only screen and (max-width: 900px) {
+    .wrapper {
+        grid-template-columns: 40% 1fr 1fr;
+    }
+    .fig-title {
+        font-size: 1.3rem;
+    }
+    .fig-text {
+        font-size: .8rem;
+    }
 }
-.search-wrapper {
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 5px;
-    align-self: flex-end;
-    justify-self: flex-end;
-    margin-right: 6px;
+
+@media only screen and (max-width: 706px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        grid-template-areas: "main" "add" "search";
+    }
+    .add-form {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    .main-section {
+        align-self: center;
+        justify-self: center;
+    }
+    .search-section {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    .fig-color {
+        height: 55px;
+        width: 55px;
+    }
+    .fig-icon {
+        height: 55px;
+        width: 55px;
+    }
+    figcaption {
+        text-align: center;
+    }
+    #productTable th:nth-child(5) {
+        display: none;
+    }
+    #productTable td:nth-child(5) {
+        display: none;
+    }
+    .primarybtn {
+        display: none;
+    }
+    .smallbtn {
+        display: initial;
+    }
 }
-label {
-    color: var(--hover-main);
-    font-size: 11px;
-    text-transform: uppercase;
-    position: absolute;
-    z-index: 2;
-    left: 20px;
-    top: 14px;
-    padding: 0 2px;
-    pointer-events: none;
-    background: #fff;
-    transition: transform 100ms ease;
-    transform: translateY(-20px);
+
+@media only screen and (max-width: 540px) {
+    #productTable th:nth-child(3) {
+        display: none;
+    }
+    #productTable td:nth-child(3) {
+        display: none;
+    }
+    #productTable th:nth-child(4) {
+        display: none;
+    }
+    #productTable td:nth-child(4) {
+        display: none;
+    }
 }
-input {
-    font-size: 13px;
-    color: var(--hover-main);
-    outline: none;
-    border: 1px solid var(--secondary-color);
-    padding: 10px 20px;
-    position: relative;
-}
-input:invalid + label {
-    transform: translateY(0);
-}
-input:focus {
-    border-color: var(--secondary-color);
-}
-input:focus + label {
-    color: var(--text-dark);
-    transform: translateY(-20px);
-}
-/* Search Sectionen */

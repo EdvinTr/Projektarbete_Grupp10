@@ -1,23 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html id="theme" xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-            crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="/css/style.css" type="text/css" rel="stylesheet">
     <link href="/css/nav.css" type="text/css" rel="stylesheet">
-    <link href="/css/layout.css" type="text/css" rel="stylesheet">
     <link href="/css/table.css" type="text/css" rel="stylesheet">
-    <link href="/css/mediaquerys.css" type="text/css" rel="stylesheet">
+    <link href="/css/layout.css" type="text/css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/d82fdbf1c7.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
     <title>Administration System</title>
@@ -30,6 +23,7 @@
             </h1>
             <div class="nav-content__list">
                 <!--Här kan ni lägga in fler länkar-->
+                <a id="themeBtn" class="nav-content__list-link border-right">Theme</a>
                 <a href="#" class="nav-content__list-link border-right">To Top</a>
                 <div class="pointer">
                     <a th:href="@{/logout}" class="nav-content__list-link">Logout
@@ -42,7 +36,6 @@
     </nav>
 </header>
 <body>
-
 <!-- Wrapper för Grid -->
 <div class="wrapper">
     <div class="add-section">
@@ -68,7 +61,6 @@
             </div>
         </form>
     </div>
-
     <div class="main-section">
         <figure class="fig-wrapper">
             <figcaption>
@@ -81,7 +73,6 @@
             </div>
         </figure>
     </div>
-
     <div class="search-section">
         <div class="input-wrapper search-wrapper">
             <form th:action="@{/}">
@@ -96,7 +87,6 @@
         </div>
     </div>
 </div>
-
 <!--Grid end-->
 <table id="productTable" cellpadding="10">
     <tr>
@@ -198,6 +188,7 @@
 </table>
 <footer>
     <p>ZanaTech &copy; 2020 - GIK2F7</p>
+    <script type="text/javascript" src="../static/js/theme.js" th:src="@{/js/theme.js}"></script>
 </footer>
 </body>
 </html>
