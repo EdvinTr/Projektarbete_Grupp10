@@ -51,6 +51,15 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
+body::-webkit-scrollbar {
+     width: 0.5rem;
+ }
+body::-webkit-scrollbar-track {
+     background: var(--section-background);
+ }
+body::-webkit-scrollbar-thumb {
+     background: var(--secondary-color);
+ }
 
 footer {
     background: var(--main-color);

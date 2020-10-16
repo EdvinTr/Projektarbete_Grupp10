@@ -14,6 +14,9 @@
     border-top: solid thin var(--table-tole-border);
     border-left: solid thin var(--table-tole-border);
 }
+#productTable tr {
+    max-height: 50px;
+}
 
 .th-fill {
     color: var(--text-main);
@@ -70,10 +73,11 @@
 }
 
 #productTable td:nth-child(6) {
-    max-width: 10rem;
-    background: var(--main-color);
+    max-width: 100%;
+    padding: 4px 0px 4px 6px;
+    background-color: var(--main-color);
     text-align: center;
-    justify-content: flex-end;
     display: grid;
     grid-auto-flow: column;
+    grid-gap: 10px;
 }

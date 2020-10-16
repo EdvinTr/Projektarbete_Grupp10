@@ -42,6 +42,10 @@
         grid-template-columns: 1fr;
         grid-template-areas: "main" "add" "search";
     }
+    .search-section {
+        margin: 0 auto;
+        max-width: 500px;
+    }
     .add-form {
         margin: 0 auto;
         max-width: 500px;

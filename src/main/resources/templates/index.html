@@ -125,16 +125,18 @@
         <td th:text="${products.quantity}">Quantity</td>
         <td th:text="${products.price}">Price</td>
         <td>
-            <button type="button" class="button primarybtn edit" data-toggle="modal"
+            <a class="button primarybtn edit" data-toggle="modal"
                     th:attr="data-target='#zanaPop'+*{products.id}">Edit
-            </button>
-            <button class="button smallbtn edit" th:href="@{'/edit/' + ${products.id}}"><i class="fas fa-pen"></i>
-            </button>
-            <a th:href="@{'/delete/' + ${products.id}}">
-                <button class="button primarybtn delete">Delete</button>
             </a>
-            <a th:href="@{'/delete/' + ${products.id}}">
-                <button class="button smallbtn delete"><i class="fas fa-trash"></i></button>
+            <a class="button smallbtn edit" data-toggle="modal"
+               th:attr="data-target='#zanaPop'+*{products.id}">
+                <i class="fas fa-pen"></i>
+            </a>
+            <a class="button primarybtn delete" th:href="@{'/delete/' + ${products.id}}">
+                Delete
+            </a>
+            <a class="button smallbtn delete" th:href="@{'/delete/' + ${products.id}}">
+                <i class="fas fa-trash"></i>
             </a>
             <!-- Bootstrap Modal Template från deras hemsida, omstylad för att passa in! -->
             <div class="modal fade" th:id="*{'zanaPop'+{products.id}}" tabindex="-1" role="dialog"
