@@ -22,8 +22,9 @@ html {
     --hover-main: #56b145;
     --table-tole-border: #2f2f2f;
     --table-bori-border: #3e3e3e;
-    --table-button-cancel: #555555;
+    --table-button-cancel: #413c3c;
     --footer-text: #43ae19;
+    --icon-color: grayscale(1) invert(1);
 }
 
 html.dark {
@@ -42,16 +43,13 @@ html.dark {
     --table-bori-border: #c1c1c1;
     --table-button-cancel: #555555;
     --footer-text: #868c96;
+    --icon-color: grayscale(0) invert(0);
 }
 
 body {
     background: var(--main-color);
     max-width: 1000px;
     margin: 0 auto;
-}
-#body {
-    width: auto;
-    background: var(--se);
 }
 
 footer {
@@ -66,6 +64,14 @@ footer p {
 
 span {
     color: var(--secondary-color);
+}
+
+.alertBox {
+    background: var(--secondary-color);
+    color: #FFFFFF;
+}
+.alert-primary {
+    border: none;
 }
 
 button:active,
@@ -285,6 +291,7 @@ figcaption {
     top: 0;
     left: 0;
     animation: fadeInFadeOut 4s infinite;
+    filter: var(--icon-color);
 }
 
 @keyframes fadeInFadeOut {

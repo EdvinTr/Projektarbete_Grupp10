@@ -25,7 +25,7 @@ public class ZanaTechSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests().antMatchers("/login", "/css/**", "/js/**").permitAll()
+                .authorizeRequests().antMatchers("/login", "/css/**", "/js/**","/img/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
