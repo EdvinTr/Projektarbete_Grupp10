@@ -70,10 +70,10 @@
 }
 
 #productTable td:nth-child(6) {
+    max-width: 10rem;
     background: var(--main-color);
     text-align: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     display: grid;
     grid-auto-flow: column;
-    grid-gap: 10px;
 }

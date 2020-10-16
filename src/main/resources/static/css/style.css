@@ -125,6 +125,7 @@ a:hover {
 
 .delete {
     background: var(--table-button-delete);
+    margin-right: 4px;
 }
 
 .edit {
