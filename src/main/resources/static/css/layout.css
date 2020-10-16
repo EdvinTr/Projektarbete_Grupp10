@@ -1,4 +1,5 @@
 .wrapper {
+    background: var(--section-background);
     max-width: 100%;
     margin: auto;
     display: grid;

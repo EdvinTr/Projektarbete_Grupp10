@@ -9,25 +9,7 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     background: var(--background);
-    --background: #FFFFFF;
-    --section-background: #FFFFFF;
-    --main-color: #F3F3F3;
-    --secondary-color: #3498db;
-    --main-button: #3498db;
-    --text-main: #000000;
-    --text-secondary: #FFFFFF;
-    --hover-main: #666;
-    --hover-secondary: #e3e3e3;
-    --table-background: #FFFFFF;
-    --table-tole-border: #d6d6d6;
-    --table-bori-border: #c1c1c1;
-    --table-button-delete: #0068ac;
-    --table-button-cancel: #555555;
-    --footer-text: #868c96;
-}
-
-html.dark {
-    --background: #FFFFFF;
+    --background: #413c3c;
     --main-color: #413c3c;
     --section-background: #5d5b5b;
     --hover-secondary: #545454;
@@ -37,16 +19,39 @@ html.dark {
     --text-main: #ffffff;
     --text-secondary: #000000;
     --table-background: #5d5b5b;
+    --hover-main: #56b145;
     --table-tole-border: #2f2f2f;
     --table-bori-border: #3e3e3e;
+    --table-button-cancel: #555555;
     --footer-text: #43ae19;
-    --hover-main: #56b145;
+}
+
+html.dark {
+    --background: #F3F3F3;
+    --main-color: #F3F3F3;
+    --section-background: #FFFFFF;
+    --hover-secondary: #e3e3e3;
+    --secondary-color: #3498db;
+    --main-button: #3498db;
+    --text-main: #000000;
+    --text-secondary: #FFFFFF;
+    --table-button-delete: #0068ac;
+    --table-background: #FFFFFF;
+    --hover-main: #666;
+    --table-tole-border: #d6d6d6;
+    --table-bori-border: #c1c1c1;
+    --table-button-cancel: #555555;
+    --footer-text: #868c96;
 }
 
 body {
-    background: var(--section-background);
+    background: var(--main-color);
     max-width: 1000px;
     margin: 0 auto;
+}
+#body {
+    width: auto;
+    background: var(--se);
 }
 
 footer {
@@ -162,6 +167,7 @@ a:hover {
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
+    background: var(--section-background);
     border: 1px solid var(--secondary-color);
 }
 
