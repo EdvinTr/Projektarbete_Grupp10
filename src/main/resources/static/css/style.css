@@ -75,6 +75,10 @@ span {
     color: var(--secondary-color);
 }
 
+#show {
+    display: initial;
+}
+
 .alertBox {
     background: var(--secondary-color);
     color: #FFFFFF;
