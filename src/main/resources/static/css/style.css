@@ -75,8 +75,8 @@ span {
     color: var(--secondary-color);
 }
 
-#show {
-    display: initial;
+.show {
+    display: initial !important;
 }
 
 .alertBox {
