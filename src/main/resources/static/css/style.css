@@ -150,6 +150,7 @@ a:hover {
 }
 
 .cancel {
+    margin-top: 6px;
     background: var(--table-button-cancel);
 }
 
