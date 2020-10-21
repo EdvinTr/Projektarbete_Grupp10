@@ -42,19 +42,19 @@
     <div class="add-section">
         <form class="add-form" action="#" th:action="@{/save}" th:object="${products}" method="post">
             <div class="input-wrapper">
-                <input type="text" th:field="*{name}" id="prodName" required>
+                <input type="text" th:field="*{name}" id="prodName" required autocomplete="off">
                 <label for="prodName">Product Name</label>
             </div>
             <div class="input-wrapper">
-                <input type="text" th:field="*{type}" id="prodType" required>
+                <input type="text" th:field="*{type}" id="prodType" required autocomplete="off">
                 <label for="prodType">Product Type</label>
             </div>
             <div class="input-wrapper">
-                <input type="text" th:field="*{quantity}" id="prodQuantity" required>
+                <input type="text" th:field="*{quantity}" id="prodQuantity" required autocomplete="off">
                 <label for="prodQuantity">Product Quantity</label>
             </div>
             <div class="input-wrapper">
-                <input type="text" th:field="*{price}" id="prodPrice" required>
+                <input type="text" th:field="*{price}" id="prodPrice" required autocomplete="off">
                 <label for="prodPrice">Product Price</label>
             </div>
             <div class="input-wrapper">
@@ -77,7 +77,7 @@
     <div class="search-section">
         <div class="input-wrapper search-wrapper">
             <form th:action="@{/}">
-                <input type="text" id="prodSearch" name="keyword">
+                <input type="text" id="prodSearch" name="keyword" autocomplete="off">
                 <label for="prodSearch">Product Search</label>
                 <button type="submit" class="button search"><i class="fa fa-search"></i></button>
             </form>
@@ -150,27 +150,27 @@
                             <form th:action="@{/edit}" method="post">
                                 <div class="input-wrapper">
                                     <input type="text" th:value="*{products.id}" id="prodId" name="id" required
-                                           readonly>
+                                           readonly autocomplete="off">
                                     <label for="prodId">Product ID</label>
                                 </div>
                                 <div class="input-wrapper">
                                     <input type="text" th:value="*{products.name}" id="editName" name="editName"
-                                           required>
+                                           required autocomplete="off">
                                     <label for="editName">Product Name</label>
                                 </div>
                                 <div class="input-wrapper">
                                     <input type="text" th:value="*{products.type}" id="editType" name="editType"
-                                           required>
+                                           required autocomplete="off">
                                     <label for="editType">Product Type</label>
                                 </div>
                                 <div class="input-wrapper">
                                     <input type="text" th:value="*{products.quantity}" id="editQuantity"
-                                           name="editQuantity" required>
+                                           name="editQuantity" required autocomplete="off">
                                     <label for="editQuantity">Product Quantity</label>
                                 </div>
                                 <div class="input-wrapper">
                                     <input type="text" th:value="*{products.price}" id="editPrice" name="editPrice"
-                                           required>
+                                           required autocomplete="off">
                                     <label for="editPrice">Product Price</label>
                                 </div>
                                 <div class="input-wrapper">
