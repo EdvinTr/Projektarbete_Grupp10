@@ -40,7 +40,7 @@
 <!-- Wrapper för Grid -->
 <div class="wrapper">
     <div class="add-section">
-        <form class="add-form" action="#" th:action="@{/save}" th:object="${products}" method="post">
+        <form class="add-form" action="#" th:action="@{/save}" th:object="${product}" method="post">
             <div class="input-wrapper">
                 <input type="text" th:field="*{name}" id="prodName" required autocomplete="off">
                 <label for="prodName">Product Name</label>
@@ -118,28 +118,28 @@
         </th>
         <th class="th-c">Actions</th>
     </tr>
-    <tr th:each="products : ${listProducts}">
-        <td th:text="${products.id}">Product ID</td>
-        <td th:text="${products.name}">Name</td>
-        <td th:text="${products.type}">Type</td>
-        <td th:text="${products.quantity}">Quantity</td>
-        <td th:text="${products.price}">Price</td>
+    <tr th:each="product : ${listProducts}">
+        <td th:text="${product.id}">Product ID</td>
+        <td th:text="${product.name}">Name</td>
+        <td th:text="${product.type}">Type</td>
+        <td th:text="${product.quantity}">Quantity</td>
+        <td th:text="${product.price}">Price</td>
         <td>
             <a class="button primarybtn edit" data-toggle="modal"
-                    th:attr="data-target='#zanaPop'+*{products.id}">Edit
+                    th:attr="data-target='#zanaPop'+*{product.id}">Edit
             </a>
             <a class="button smallbtn edit" data-toggle="modal"
-               th:attr="data-target='#zanaPop'+*{products.id}">
+               th:attr="data-target='#zanaPop'+*{product.id}">
                 <i class="fas fa-pen"></i>
             </a>
-            <a class="button primarybtn delete" th:href="@{'/delete/' + ${products.id}}">
+            <a class="button primarybtn delete" th:href="@{'/delete/' + ${product.id}}">
                 Delete
             </a>
-            <a class="button smallbtn delete" th:href="@{'/delete/' + ${products.id}}">
+            <a class="button smallbtn delete" th:href="@{'/delete/' + ${product.id}}">
                 <i class="fas fa-trash"></i>
             </a>
             <!-- Bootstrap Modal Template från deras hemsida, omstylad för att passa in! -->
-            <div class="modal fade" th:id="*{'zanaPop'+{products.id}}" tabindex="-1" role="dialog"
+            <div class="modal fade" th:id="*{'zanaPop'+{product.id}}" tabindex="-1" role="dialog"
                  aria-labelledby="zanaPopTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content popup">
@@ -149,27 +149,27 @@
                         <div class="modal-body">
                             <form th:action="@{/edit}" method="post">
                                 <div class="input-wrapper">
-                                    <input type="text" th:value="*{products.id}" id="prodId" name="id" required
+                                    <input type="text" th:value="*{product.id}" id="prodId" name="id" required
                                            readonly autocomplete="off">
                                     <label for="prodId">Product ID</label>
                                 </div>
                                 <div class="input-wrapper">
-                                    <input type="text" th:value="*{products.name}" id="editName" name="editName"
+                                    <input type="text" th:value="*{product.name}" id="editName" name="editName"
                                            required autocomplete="off">
                                     <label for="editName">Product Name</label>
                                 </div>
                                 <div class="input-wrapper">
-                                    <input type="text" th:value="*{products.type}" id="editType" name="editType"
+                                    <input type="text" th:value="*{product.type}" id="editType" name="editType"
                                            required autocomplete="off">
                                     <label for="editType">Product Type</label>
                                 </div>
                                 <div class="input-wrapper">
-                                    <input type="text" th:value="*{products.quantity}" id="editQuantity"
+                                    <input type="text" th:value="*{product.quantity}" id="editQuantity"
                                            name="editQuantity" required autocomplete="off">
                                     <label for="editQuantity">Product Quantity</label>
                                 </div>
                                 <div class="input-wrapper">
-                                    <input type="text" th:value="*{products.price}" id="editPrice" name="editPrice"
+                                    <input type="text" th:value="*{product.price}" id="editPrice" name="editPrice"
                                            required autocomplete="off">
                                     <label for="editPrice">Product Price</label>
                                 </div>

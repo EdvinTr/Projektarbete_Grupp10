@@ -12,5 +12,4 @@ public class ZanatechApplication {
     public static void main(String[] args) {
         SpringApplication.run(ZanatechApplication.class, args);
     }
-
 }

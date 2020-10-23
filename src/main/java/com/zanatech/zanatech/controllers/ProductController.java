@@ -1,6 +1,6 @@
 package com.zanatech.zanatech.controllers;
 
-import com.zanatech.zanatech.models.Products;
+import com.zanatech.zanatech.models.Product;
 import com.zanatech.zanatech.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -19,26 +19,25 @@ public class ProductController {
 
     @RequestMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
-        List<Products> listProducts = service.listAll(keyword);
-        /* HÄR ÄR ETT FEL*/
-        Products products = new Products();
-        model.addAttribute("products", products);
+        List<Product> listProducts = service.listAll(keyword);
+        Product product = new Product();
+        model.addAttribute("product", product);
         model.addAttribute("listProducts", listProducts);
         return "index";
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.POST)
-    public String editProduct(@ModelAttribute("products") Products products, @RequestParam Map<String, String> params) {
-        products.setName(params.get("editName"));
-        products.setPrice(Double.valueOf(params.get("editPrice")));
-        products.setType(params.get("editType"));
-        products.setQuantity(Integer.valueOf(params.get("editQuantity")));
-        service.save(products);
+    public String editProduct(@ModelAttribute("product") Product product, @RequestParam Map<String, String> params) {
+        product.setName(params.get("editName"));
+        product.setPrice(Double.valueOf(params.get("editPrice")));
+        product.setType(params.get("editType"));
+        product.setQuantity(Integer.valueOf(params.get("editQuantity")));
+        service.save(product);
         return "redirect:/";
     }
 
     @RequestMapping("/save")
-    public String saveProd(@ModelAttribute("products") Products product) {
+    public String saveProd(@ModelAttribute("product") Product product) {
         service.save(product);
         return "redirect:/";
     }
@@ -75,7 +74,7 @@ public class ProductController {
     }
 
     private String orderBy(Model model, @RequestParam("x") String columnName) {
-        List<Products> listProducts;
+        List<Product> listProducts;
         if (orderByCounter == 0) {
             listProducts = service.sortByAsc(columnName);
             orderByCounter = 1;
@@ -83,8 +82,8 @@ public class ProductController {
             listProducts = service.sortByDesc(columnName);
             orderByCounter = 0;
         }
-        Products products = new Products();
-        model.addAttribute("products", products);
+        Product product = new Product();
+        model.addAttribute("product", product);
         model.addAttribute("listProducts", listProducts);
         return "index";
     }

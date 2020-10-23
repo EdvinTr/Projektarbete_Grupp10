@@ -29,9 +29,11 @@
     .wrapper {
         grid-template-columns: 40% 1fr 1fr;
     }
+
     .fig-title {
         font-size: 1.3rem;
     }
+
     .fig-text {
         font-size: .8rem;
     }
@@ -42,42 +44,53 @@
         grid-template-columns: 1fr;
         grid-template-areas: "main" "add" "search";
     }
+
     .search-section {
         margin: 0 auto;
         max-width: 500px;
     }
+
     .add-form {
         margin: 0 auto;
         max-width: 500px;
     }
+
     .main-section {
         align-self: center;
         justify-self: center;
     }
+
     .search-section {
         max-width: 500px;
         margin: 0 auto;
     }
+
     .fig-color {
         height: 55px;
         width: 55px;
     }
+
     .fig-icon {
         height: 55px;
         width: 55px;
     }
+
     figcaption {
         text-align: center;
     }
+
     #productTable th:nth-child(5) {
         display: none;
     }
+
     #productTable td:nth-child(5) {
         display: none;
     }
+
     .primarybtn {
         display: none;
     }
+
     .smallbtn {
         display: initial;
     }
@@ -87,12 +100,15 @@
     #productTable th:nth-child(3) {
         display: none;
     }
+
     #productTable td:nth-child(3) {
         display: none;
     }
+
     #productTable th:nth-child(4) {
         display: none;
     }
+
     #productTable td:nth-child(4) {
         display: none;
     }

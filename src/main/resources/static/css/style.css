@@ -51,15 +51,18 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
+
 body::-webkit-scrollbar {
-     width: 0.5rem;
- }
+    width: 0.5rem;
+}
+
 body::-webkit-scrollbar-track {
-     background: var(--section-background);
- }
+    background: var(--section-background);
+}
+
 body::-webkit-scrollbar-thumb {
-     background: var(--secondary-color);
- }
+    background: var(--secondary-color);
+}
 
 footer {
     background: var(--main-color);
@@ -83,6 +86,7 @@ span {
     background: var(--secondary-color);
     color: #FFFFFF;
 }
+
 .alert-primary {
     border: none;
 }
@@ -248,23 +252,23 @@ figcaption {
 }
 
 .fig,
-.fig>.fig-container {
+.fig > .fig-container {
     margin: 0 auto;
 }
 
-.fig>.fig-container>.fig-color,
-.fig>.fig-container>.fig-icon {
+.fig > .fig-container > .fig-color,
+.fig > .fig-container > .fig-icon {
     margin: 0 auto;
     width: 40px;
     height: 40px;
 }
 
-.fig>.fig-container {
+.fig > .fig-container {
     justify-content: center;
     align-content: center;
 }
 
-.fig>.fig-container>.fig-icon {
+.fig > .fig-container > .fig-icon {
     left: auto;
 }
 

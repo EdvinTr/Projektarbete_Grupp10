@@ -1,6 +1,6 @@
 package com.zanatech.zanatech.services;
 
-import com.zanatech.zanatech.models.Products;
+import com.zanatech.zanatech.models.Product;
 import com.zanatech.zanatech.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -13,18 +13,18 @@ public class ProductService {
     @Autowired
     private ProductRepository repo;
 
-    public List<Products> listAll(String keyword) {
+    public List<Product> listAll(String keyword) {
         if (keyword != null) {
             return repo.findAll(keyword);
         }
         return repo.findAll();
     }
 
-    public void save(Products products) {
-        repo.save(products);
+    public void save(Product product) {
+        repo.save(product);
     }
 
-    public Products get(Integer id) {
+    public Product get(Integer id) {
         return repo.findById(id).get();
     }
 
@@ -32,11 +32,11 @@ public class ProductService {
         repo.deleteById(id);
     }
 
-    public List<Products> sortByAsc(String columnName) {
+    public List<Product> sortByAsc(String columnName) {
         return repo.findAll(Sort.by(Sort.Direction.ASC, columnName));
     }
 
-    public List<Products> sortByDesc(String columnName) {
+    public List<Product> sortByDesc(String columnName) {
         return repo.findAll(Sort.by(Sort.Direction.DESC, columnName));
     }
 }

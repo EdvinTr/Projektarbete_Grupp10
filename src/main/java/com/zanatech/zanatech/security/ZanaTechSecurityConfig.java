@@ -25,7 +25,7 @@ public class ZanaTechSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .authorizeRequests().antMatchers("/login", "/css/**", "/js/**","/img/**").permitAll()
+                .authorizeRequests().antMatchers("/login", "/css/**", "/js/**", "/img/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -36,10 +36,12 @@ public class ZanaTechSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/logout-success").permitAll();
     }
+
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService);
     }
+
     @Bean
     public PasswordEncoder getPasswordEncoder() {
         return NoOpPasswordEncoder.getInstance();

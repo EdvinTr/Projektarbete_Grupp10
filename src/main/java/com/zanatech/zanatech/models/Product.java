@@ -1,13 +1,11 @@
 package com.zanatech.zanatech.models;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Products {
+@Table(name = "products")
+public class Product {
 
     private Integer id;
     private String name;
@@ -15,7 +13,7 @@ public class Products {
     private Integer quantity;
     private Double price;
 
-    public Products() {
+    public Product() {
 
     }
 

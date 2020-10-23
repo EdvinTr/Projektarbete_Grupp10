@@ -14,6 +14,7 @@
     border-top: solid thin var(--table-tole-border);
     border-left: solid thin var(--table-tole-border);
 }
+
 #productTable tr {
     max-height: 50px;
 }
